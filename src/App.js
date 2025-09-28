@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import Navbar from "./modules/navBar";
 import Award from "./modules/award";    
 import Introduction from "./modules/introduction";
+import Project from "../src/modules/projects";
 
 function Section({ id, title, children }) {
   return (
@@ -33,7 +34,7 @@ export default function App() {
         </Section>
 
         <Section id="Projects" title="Projects">
-          <p>Add your projects here…</p>
+          <Project/>
         </Section>
 
         <Section id="Awards" title="Awards">

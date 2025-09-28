@@ -1,0 +1,142 @@
+:root{
+  --gc-bg:#fff;
+  --gc-text:#0f172a;
+  --gc-muted:#475569;    
+  --gc-soft:#f1f5f9;      
+  --gc-line:#e8ecf3;
+  --gc-radius:18px;
+  --gc-rad-soft:12px;
+  --gc-shadow:0 8px 26px rgba(2,8,23,.08);
+  --gc-shadow-hover:0 14px 36px rgba(2,8,23,.14);
+  --gc-grad:linear-gradient(135deg,#7c3aed 0%,#9333ea 55%,#22d3ee 115%);
+}
+
+.gc-card{
+  display:flex;
+  flex-direction:column;
+  background:var(--gc-bg);
+  border-radius:var(--gc-radius);
+  box-shadow:var(--gc-shadow);
+  border:1px solid var(--gc-line);
+  padding:18px;
+  text-decoration:none;
+  color:var(--gc-text);
+  position:relative;
+  transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+  isolation:isolate;
+}
+.gc-card:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--gc-shadow-hover);
+  border-color:rgba(124,58,237,.18);
+}
+.gc-card::after{
+  content:"";
+  position:absolute; inset:0;
+  border-radius:var(--gc-radius);
+  background:var(--gc-grad);
+  opacity:0; pointer-events:none;
+  mix-blend-mode:multiply;
+  transition:opacity .22s ease;
+}
+.gc-card:hover::after{ opacity:.04; }
+
+.gc-card[role="button"]{ cursor:pointer; }
+.gc-card:focus-visible{
+  outline:none;
+  box-shadow:0 0 0 3px rgba(124,58,237,.25), var(--gc-shadow-hover);
+}
+
+.gc-cover{
+  width:100%; aspect-ratio:16/9;
+  border-radius:var(--gc-rad-soft);
+  overflow:hidden;
+  background:var(--gc-soft);
+  position:relative;
+  margin-bottom:14px;
+}
+.gc-img{
+  width:100%; height:100%; object-fit:cover; display:block;
+  transform:scale(1.01);
+  transition:transform .35s ease, filter .35s ease;
+  filter:saturate(.98) contrast(.98);
+}
+.gc-card:hover .gc-img{
+  transform:scale(1.03);
+  filter:saturate(1.05) contrast(1.02);
+}
+
+.gc-ribbon{
+  position:absolute; top:12px; left:12px;
+  padding:6px 10px; border-radius:10px;
+  color:#fff; font-size:.75rem; font-weight:700;
+  background:var(--gc-grad);
+  box-shadow:0 4px 12px rgba(124,58,237,.25);
+  letter-spacing:.2px;
+}
+
+.gc-body{ display:flex; flex-direction:column; gap:10px; }
+
+.gc-title{
+  margin:0;
+  font-weight:800;
+  font-size:1.125rem; 
+  line-height:1.3;
+  letter-spacing:.1px;
+  color:var(--gc-text);
+}
+.gc-headrow{
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+}
+
+.gc-row{
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  margin-top:-4px;
+}
+.gc-price{ font-weight:700; color:var(--gc-text); }
+.gc-icon{ width:20px; height:20px; opacity:.55; transition:opacity .2s, transform .2s; }
+.gc-card:hover .gc-icon{ opacity:.85; transform:translateX(2px); }
+
+/* tag 列表 */
+.gc-taglist{
+  display:flex; flex-wrap:wrap; gap:8px; margin:0; padding:0; list-style:none;
+}
+.gc-tag{
+  background:var(--gc-soft);
+  color:var(--gc-muted);
+  font-size:.8rem; padding:5px 10px; border-radius:999px;
+  border:1px solid #e6ebf3;
+}
+
+/* ========== Details toggle & panel ========== */
+.gc-toggle{
+  display:inline-flex; align-items:center; gap:6px;
+  padding:7px 12px; border-radius:999px;
+  background:#fff; color:#334155; font-size:.85rem; line-height:1;
+  border:1px solid #e6ebf3; box-shadow:0 1px 2px rgba(2,8,23,.04);
+  transition:background .2s, box-shadow .2s, border-color .2s, color .2s;
+}
+.gc-toggle:hover{
+  background:#f8fafc; border-color:rgba(124,58,237,.25);
+  box-shadow:0 2px 6px rgba(2,8,23,.08); color:#1f2a44;
+}
+.gc-toggle:focus-visible{ outline:none; box-shadow:0 0 0 3px rgba(124,58,237,.22); }
+.gc-toggle-text{ pointer-events:none; }
+
+.gc-chevron{ width:18px; height:18px; opacity:.75; transition:transform .22s ease, opacity .2s; }
+.gc-toggle:hover .gc-chevron{ opacity:1; }
+.gc-chevron.is-open{ transform:rotate(180deg); }
+
+.gc-details{
+  --max: 260px;
+  max-height:0; opacity:0; overflow:hidden; margin-top:0;
+  transition:max-height .28s ease, opacity .28s ease, margin-top .28s ease;
+}
+.gc-details[data-open="true"]{
+  max-height:var(--max); opacity:1; margin-top:6px;
+}
+.gc-details-text{
+  font-size:.95rem; line-height:1.65; color:var(--gc-muted);
+  background:linear-gradient(180deg,#f9fafb 0%, #f4f7fb 100%);
+  border:1px solid #e9eef6; border-radius:12px; padding:12px 14px;
+}
