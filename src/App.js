@@ -4,6 +4,8 @@ import Navbar from "./modules/navBar";
 import Award from "./modules/award";    
 import Introduction from "./modules/introduction";
 import Project from "../src/modules/projects";
+import Education from "../src/modules/education";
+import Experience from "../src/modules/experience";
 
 function Section({ id, title, children }) {
   return (
@@ -24,13 +26,11 @@ export default function App() {
         </Section>
 
         <Section id="Experience" title="Experience">
-          <ul>
-          </ul>
+          <Experience />
         </Section>
 
         <Section id="Education" title="Education">
-          <ul>
-          </ul>
+          <Education />
         </Section>
 
         <Section id="Projects" title="Projects">
