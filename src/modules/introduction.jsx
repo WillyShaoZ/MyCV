@@ -2,21 +2,29 @@ export default function Introduction() {
   return (
     <div className="intro">
       <p>
-        Hi, I’m <strong>Zhen Shao</strong>—a motivated, self-taught web
-        developer and Computer Science student at Monash University. I enjoy
-        turning ideas into clean, accessible interfaces and practical features.
-        Recent work spans <strong>React/TypeScript</strong> UIs,
-        <strong> Node.js/Express</strong> services, and
-        <strong> MongoDB</strong> data models. I’m comfortable reading docs,
-        debugging tricky issues, and shipping small, iterative improvements.
-        Outside class, customer-facing experience has strengthened my
-        communication and teamwork.
+        Hi, I’m <strong>Zhen (Willy) Shao</strong> — a full-stack engineer and
+        Computer Science graduate from <strong>Monash University</strong>. I’ve
+        built and shipped production systems end-to-end, from database schema
+        and API design through to the interfaces people actually use:{' '}
+        <strong>Vue 3</strong> and <strong>React/TypeScript</strong> on the
+        front end, <strong>Python/FastAPI</strong> and{' '}
+        <strong>Node.js</strong> behind it, on <strong>PostgreSQL</strong>.
+      </p>
+
+      <p>
+        AI-assisted development is how I work rather than a line on a résumé — I
+        build with Claude and Cursor daily, and I’ve shipped LLM pipelines into
+        production, which mostly taught me to validate what a model gives back
+        before it reaches data that matters. I like owning a problem all the way
+        to something running, and I’m comfortable being the person who talks to
+        the business and then goes and builds it.
       </p>
 
       <ul className="intro__highlights">
-        <li>React/TypeScript • Node/Express • MongoDB</li>
-        <li>Clean UI & accessibility • Pragmatic features</li>
-        <li>Monash University — B.CompSci (2024—present)</li>
+        <li>Vue 3 • React/TypeScript • Python/FastAPI • Node.js • PostgreSQL</li>
+        <li>AI-assisted development • LLM integrations • CI/CD & cloud deployment</li>
+        <li>Monash University — B.CompSci (2024 — 2026, completed)</li>
+        <li>Bilingual: English & Mandarin</li>
       </ul>
     </div>
   );

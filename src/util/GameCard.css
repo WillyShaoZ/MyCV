@@ -75,7 +75,23 @@
   letter-spacing:.2px;
 }
 
+/* 无封面图卡片：用顶部渐变条代替视觉锚点 */
+.gc-card--flat{ padding-top:22px; }
+.gc-card--flat::before{
+  content:"";
+  position:absolute; top:0; left:0; right:0; height:4px;
+  border-radius:var(--gc-radius) var(--gc-radius) 0 0;
+  background:var(--gc-grad);
+}
+
 .gc-body{ display:flex; flex-direction:column; gap:10px; }
+
+.gc-meta{
+  margin:-4px 0 0;
+  font-size:.85rem;
+  color:var(--gc-muted);
+  letter-spacing:.1px;
+}
 
 .gc-title{
   margin:0;
@@ -128,7 +144,7 @@
 .gc-chevron.is-open{ transform:rotate(180deg); }
 
 .gc-details{
-  --max: 260px;
+  --max: 620px;
   max-height:0; opacity:0; overflow:hidden; margin-top:0;
   transition:max-height .28s ease, opacity .28s ease, margin-top .28s ease;
 }

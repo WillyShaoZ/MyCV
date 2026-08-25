@@ -3,10 +3,10 @@ export default function Education() {
     <section id="education" className="section">
       <div className="education-item">
         <h3>Bachelor of Computer Science — Monash University</h3>
-        <p className="date">07.2024 – Present</p>
+        <p className="date">07.2024 – 08.2026 · Completed</p>
         <p>
-          Coursework includes software engineering, algorithms, databases, and
-          web development.
+          Coursework included software engineering, algorithms, databases,
+          distributed systems, and web development.
         </p>
       </div>
 

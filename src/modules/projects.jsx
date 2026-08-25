@@ -16,10 +16,12 @@ export default function Project() {
             key={item.id}
             cover={item.cover}
             title={item.name}
+            meta={item.meta}
+            tags={item.tags}
             description={item.description}
             href={item.href}
-            download={item.download}        
-            openInNewTab={item.openInNewTab} 
+            download={item.download}
+            openInNewTab={item.openInNewTab}
             open={open}
             onToggle={() => handleToggle(item.id)}
             ariaLabel={item.name}

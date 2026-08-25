@@ -3,6 +3,7 @@ import './GameCard.css';
 export default function GameCard({
   title,
   cover,
+  meta,
   price,
   tags = [],
   ribbon,
@@ -18,7 +19,9 @@ export default function GameCard({
   style,
 }) {
   const Root = href ? 'a' : 'article';
-  const classes = ['gc-card', className].filter(Boolean).join(' ');
+  const classes = ['gc-card', cover ? null : 'gc-card--flat', className]
+    .filter(Boolean)
+    .join(' ');
 
   const commonProps = {
     className: classes,
@@ -44,15 +47,17 @@ export default function GameCard({
 
   return (
     <Root {...rootProps}>
-      <div className="gc-cover">
-        <img
-          src={cover}
-          alt={title || 'game cover'}
-          className="gc-img"
-          loading="lazy"
-        />
-        {ribbon ? <div className="gc-ribbon">{ribbon}</div> : null}
-      </div>
+      {cover ? (
+        <div className="gc-cover">
+          <img
+            src={cover}
+            alt={title || 'project cover'}
+            className="gc-img"
+            loading="lazy"
+          />
+          {ribbon ? <div className="gc-ribbon">{ribbon}</div> : null}
+        </div>
+      ) : null}
 
       <div className="gc-body">
         <div className="gc-headrow">
@@ -77,12 +82,16 @@ export default function GameCard({
           ) : null}
         </div>
 
-        <div className="gc-row">
-          {price ? <span className="gc-price">{price}</span> : <span />}
-          <svg aria-hidden viewBox="0 0 24 24" className="gc-icon">
-            <path fill="currentColor" d="M7 10h10v2H7z" />
-          </svg>
-        </div>
+        {meta ? <p className="gc-meta">{meta}</p> : null}
+
+        {price || href ? (
+          <div className="gc-row">
+            {price ? <span className="gc-price">{price}</span> : <span />}
+            <svg aria-hidden viewBox="0 0 24 24" className="gc-icon">
+              <path fill="currentColor" d="M7 10h10v2H7z" />
+            </svg>
+          </div>
+        ) : null}
 
         {Array.isArray(tags) && tags.length > 0 ? (
           <ul className="gc-taglist">
