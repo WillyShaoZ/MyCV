@@ -1,11 +1,11 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
 import Navbar from "./modules/navBar";
-import Award from "./modules/award";    
+import Hero from "./modules/hero";
+import Award from "./modules/award";
 import Introduction from "./modules/introduction";
-import Project from "../src/modules/projects";
-import Education from "../src/modules/education";
-import Experience from "../src/modules/experience";
+import Project from "./modules/projects";
+import Education from "./modules/education";
+import Experience from "./modules/experience";
+import { useContent } from "./lib/content";
 
 function Section({ id, title, children }) {
   return (
@@ -17,10 +17,16 @@ function Section({ id, title, children }) {
 }
 
 export default function App() {
+  const { content, loading } = useContent();
+
   return (
     <>
       <Navbar />
       <main className="container">
+        <Hero />
+
+        {loading ? <p className="loading">Loading…</p> : null}
+
         <Section id="Introduction" title="Introduction">
           <Introduction />
         </Section>
@@ -34,16 +40,18 @@ export default function App() {
         </Section>
 
         <Section id="Projects" title="Projects">
-          <Project/>
+          <Project />
         </Section>
 
         <Section id="Awards" title="Awards">
-          <Award /> 
+          <Award />
         </Section>
+
+        <footer className="footer">
+          <span>© {new Date().getFullYear()} {content.profile?.name}</span>
+          <span>Built with React</span>
+        </footer>
       </main>
     </>
   );
 }
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);

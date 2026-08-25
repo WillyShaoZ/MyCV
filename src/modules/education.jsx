@@ -1,23 +1,21 @@
-export default function Education() {
-  return (
-    <section id="education" className="section">
-      <div className="education-item">
-        <h3>Bachelor of Computer Science — Monash University</h3>
-        <p className="date">07.2024 – 08.2026 · Completed</p>
-        <p>
-          Coursework included software engineering, algorithms, databases,
-          distributed systems, and web development.
-        </p>
-      </div>
+import { useContent } from "../lib/content";
 
-      <div className="education-item">
-        <h3>Diploma of Information Technology — Monash College</h3>
-        <p className="date">02.2023 – 06.2024</p>
-        <p>
-          Built foundational knowledge in programming, data management, and IT
-          systems.
-        </p>
-      </div>
-    </section>
+export default function Education() {
+  const { content } = useContent();
+  const items = content.education || [];
+
+  return (
+    <div>
+      {items.map((item) => (
+        <div className="education-item" key={item.id}>
+          <h3>
+            {item.degree}
+            {item.org ? ` — ${item.org}` : ""}
+          </h3>
+          {item.date_range ? <p className="date">{item.date_range}</p> : null}
+          {item.description ? <p>{item.description}</p> : null}
+        </div>
+      ))}
+    </div>
   );
 }
