@@ -33,7 +33,6 @@ export const defaultExperiences = [
       "Coordinate AI adoption and business-systems development for a 100+ employee construction company, building and running its internal management system",
       "Designed and delivered an approved performance management system for the Estimating department, as a module on the same internal platform; now extending to the Admin department",
       "Built an automated people-analytics pipeline turning employee survey data into a management dashboard and executive PDF reports — scoring, tier segmentation, trend analysis and cross-validation",
-      "Automated data table provisioning through API scripts, replacing error-prone manual configuration",
     ],
     note: "",
     sort: 1,
@@ -119,7 +118,7 @@ export const defaultProjects = [
     meta: "Commercial product · 2026",
     tags: ["Vue 3", "uni-app", "FastAPI", "PostgreSQL", "LLM pipeline", "Railway"],
     description:
-      "A workforce management product for an Australian construction company, built solo from schema to deployment. Its core is an AI parsing pipeline that turns supervisors’ free-text work logs into structured, validated payroll records — which meant building the validation and reconciliation layer around it, because payroll data cannot be trusted to a model on faith. Includes multi-tenant data isolation, role-based accounts across supervisor and worker apps, and Alembic-managed migrations.",
+      "A workforce management product for an Australian construction company, built solo from schema to deployment. Its core is an AI parsing pipeline that turns supervisors’ free-text work logs into structured, validated payroll records — which meant building the validation and reconciliation layer around it, because payroll data cannot be trusted to a model on faith. Includes multi-tenant data isolation and role-based accounts across supervisor and worker apps.",
     cover_url: "",
     href: "",
     sort: 2,
@@ -130,7 +129,7 @@ export const defaultProjects = [
     meta: "Aflux Interior Linings · 2026 – present",
     tags: ["Python", "REST APIs", "Data pipeline", "PDF reporting"],
     description:
-      "Internal analytics systems for a 100+ employee construction group, built working directly with the CEO. An automated pipeline takes raw employee survey data through scoring, tier segmentation, trend analysis and cross-validation of responses, and outputs a management dashboard plus executive PDF reports. A departmental performance management system, built as a module on the company’s internal platform, is approved for the Estimating department and now extending to Admin. Data table provisioning is automated through API scripts, replacing error-prone manual configuration.",
+      "Internal analytics systems for a 100+ employee construction group, built working directly with the CEO. An automated pipeline takes raw employee survey data through scoring, tier segmentation, trend analysis and cross-validation of responses, and outputs a management dashboard plus executive PDF reports. A departmental performance management system, built as a module on the company’s internal platform, is approved for the Estimating department and now extending to Admin.",
     cover_url: "",
     href: "",
     sort: 3,
