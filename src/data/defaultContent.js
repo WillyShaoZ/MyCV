@@ -30,7 +30,7 @@ export const defaultExperiences = [
     company: "Aflux Interior Linings — Melbourne, Australia",
     date_range: "07.2026 – Present",
     bullets: [
-      "Coordinate AI adoption and business-systems development for a 100+ employee construction company, working directly with the CEO on the company-wide AI Operating System roadmap",
+      "Coordinate AI adoption and business-systems development for a 100+ employee construction company, building and running its internal management system",
       "Designed and delivered an approved performance management system for the Estimating department, on a hybrid architecture combining Lark (Feishu) as the data layer with custom API-driven dashboards; now extending to the Admin department",
       "Built an automated people-analytics pipeline turning employee survey data into a management dashboard and executive PDF reports — scoring, tier segmentation, trend analysis and cross-validation",
       "Automated data table provisioning through API scripts, replacing error-prone manual configuration",
